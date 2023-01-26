@@ -27,5 +27,5 @@ municipio<- municipio %>%
 
 ggplot() + geom_sf(data=municipio,fill="#2D3E50",color="#FEBF57",size=0.15,
                    show.legend = F)
-#### 
+
 
