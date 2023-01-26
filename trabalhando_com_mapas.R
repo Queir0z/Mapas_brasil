@@ -20,7 +20,7 @@ meso_reg<-read_meso_region("all",year=2010)
 ggplot() + geom_sf(data=meso_reg,fill="#2D3E50",color="#FEBF57",size=0.15,
                    show.legend = F)
 
-#### Exemplo 1
+#### Exemplo 1 pegando o sudeste
 municipio<-read_municipality(code_muni = "all",year=2018) 
 municipio<- municipio %>% 
   filter(abbrev_state %in%  c("MG","ES","SP","RJ") )
@@ -28,4 +28,19 @@ municipio<- municipio %>%
 ggplot() + geom_sf(data=municipio,fill="#2D3E50",color="#FEBF57",size=0.15,
                    show.legend = F)
 
+#### Buscando a região pelo código
+micro_reg=read_micro_region(code_micro =33018)
+municipio<-read_municipality(code_muni = 33018,year=2018) 
+ggplot() + geom_sf(data=micro_reg,fill="#2D3E50",color="#FEBF57",size=0.15,
+                   show.legend = F)
+#### exemplo 2
+meso_reg<-read_meso_region(code_meso =  3306)
+meso_reg1<-read_meso_region(code_meso =  3301)
 
+municipio<-read_municipality(code_muni = 33018,year=2018) 
+
+ggplot() + geom_sf(data=meso_reg,fill="#2D3E50",color="#FEBF57",size=0.15,
+                   show.legend = F)+
+ geom_sf(data=meso_reg1,fill="#6F4E50",color="#FEBF57",size=0.15,
+                     show.legend = F)
+  
